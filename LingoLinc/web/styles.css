@@ -1,0 +1,158 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #282b30;
+    color: white;
+}
+
+header {
+    background-color: #1e2124;
+    color: #fff;
+    padding: 10px;
+    align-items: center;
+}
+
+.title img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+
+.language-select {
+    appearance: none;
+    background-color: #282b30;
+    color: white;
+    border: none;
+    border-bottom: 2px solid orange;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s, margin-bottom 0.3s ease;
+}
+
+.language-select:focus {
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0.5;
+    margin-left: 10px;
+}
+
+.container:hover img {
+    opacity: 1;
+}
+
+
+.form {
+    width: 45%;
+    padding: 20px;
+}
+
+
+textarea {
+    border: 2px solid transparent;
+    background-color: #36393e; 
+    color: white;
+    padding: 10px; 
+    font-size: 14px;
+    border-radius: 5px; 
+    transition: margin-top 0.3s ease;
+    transform-origin: left;
+    resize: none;
+    width: 650px;
+    height: 300px;
+}
+
+textarea:hover{
+    background-color: #36393e;
+    color: orange;
+    border-color: orange;
+    margin-top: 10px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.donate {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+h4 img{
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.crypto-card {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    background-color: #36393e;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.crypto-card h5 {
+    margin: 0;
+}
+
+.crypto-card img {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    display: block;
+}
+
+.crypto-card:hover {
+    transform: scale(1.05);
+}
+
+.crypto-card p {
+    margin: 0;
+    padding: 5px;
+}
+
+.crypto-card a {
+    color: orange;
+    text-decoration: none;
+}
+
+.crypto-card a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    background-color: #1e2124;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}

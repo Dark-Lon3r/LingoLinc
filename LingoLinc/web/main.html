@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoLink</title>
+    <link rel="icon" type="image/png" href="media\ico\translate_title.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="eel.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1 class="title" align="center"><img src="media\ico\translate_title.png">LingoLink</h1>
+    </header>
+
+    <div class="container">
+        <form class="form">
+            <textarea id="inputText" placeholder="⌨️Enter Text" oninput="translateText()"></textarea>
+        </form>
+        <img src="media\ico\chevron.png">
+        <form class="form">
+            <select id="languageSelect1" class="language-select" oninput="translateText()">
+                <option value="en">EN:English</option>
+                <option value="es">ES:Spanish</option>
+                <option value="fr">FR:French</option>
+                <option value="ru">RU:Русский</option>
+                <option value="uk">UK:Украинский</option>
+            </select>
+            <textarea id="outputText" placeholder="💡Translation" readonly></textarea>
+        </form>
+    </div>
+
+    <div class="donate" align="center">
+        <h4><img src="media\donate\money.png">Support me</h4>
+        <div class="crypto-card">
+            <h5>BTC</h5>
+            <img src="media\donate\btc_qr_code.jpg" alt="BTC QR Code">
+            <p><a href="https://link.trustwallet.com/send?asset=c0&address=bc1qu2ett3jk3kkdd50fr4yy5qjgwcf6qs90cptpe6">BTC</a></p>
+        </div>
+        <div class="crypto-card">
+            <h5>ETH</h5>
+            <img src="media\donate\eth_qr_code.jpg" alt="ETH QR Code">
+            <p><a href="https://link.trustwallet.com/send?asset=c60&address=0xfa43adcaC34b2D4CF1AE800a3Fa5eB61dAD5C8aB">ETH</a></p>
+        </div>
+        <div class="crypto-card">
+            <h5>USDT.e</h5>
+            <img src="media\donate\usdt_qr_code.jpg" alt="USDT.e QR Code">
+            <p><a href="https://link.trustwallet.com/send?address=0xfa43adcaC34b2D4CF1AE800a3Fa5eB61dAD5C8aB&asset=c10009000_t0xc7198437980c041c805A1EDcbA50c1Ce5db95118">USDT.e</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p align="center">&copy; DarkLon3r</p>
+    </footer>
+
+    <script type="text/javascript">
+        async function translateText() {
+            let inputText = document.getElementById('inputText').value;
+            let selectedLanguage = document.getElementById('languageSelect1').value;
+
+            if (inputText.trim() === '') {
+                document.getElementById('outputText').textContent = '';
+            } 
+            else {
+                let result = await eel.result_search(inputText, selectedLanguage)();
+                document.getElementById('outputText').innerHTML = result;
+            }
+        }
+    </script>
+
+</body>
+</html>
